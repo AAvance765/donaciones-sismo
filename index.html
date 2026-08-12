@@ -4,22 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AAvance y Cruz Roja - Solidaridad por Colombia</title>
+    
+    <!-- IMPORTANDO LA FUENTE POPPINS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configurando Tailwind para usar Poppins en toda la página -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-50 font-sans antialiased text-gray-800">
 
-    <!-- 1. HEADER CENTRADO -->
+    <!-- HEADER CENTRADO -->
     <header class="bg-white shadow-sm py-4 px-6 w-full top-0 z-50">
         <div class="max-w-5xl mx-auto flex justify-center items-center space-x-6 md:space-x-12">
-            <!-- Logo AAvance -->
             <img src="LogoAAvance.png" alt="Logo AAvance" class="h-8 md:h-10 object-contain">
             
             <div class="flex items-center space-x-3 md:space-x-6">
-                <!-- Línea separadora sutil y texto -->
                 <div class="hidden md:flex items-center border-l-2 border-gray-200 pl-6 h-8">
                     <span class="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">En alianza con</span>
                 </div>
-                <!-- Logo Cruz Roja -->
                 <img src="Logo%20CRUZ%20ROJA%20horizontal.png" alt="Logo Cruz Roja" class="h-10 md:h-12 object-contain">
             </div>
         </div>
@@ -27,54 +43,42 @@
 
     <main class="max-w-5xl mx-auto px-4 py-8">
         
-        <!-- 2. IMAGEN PRINCIPAL -->
+        <!-- IMAGEN PRINCIPAL -->
         <img src="Captura%20de%20pantalla%202026-08-10%20182034.png" 
              alt="Campaña AAvance Solidario" 
              class="w-full max-w-2xl mx-auto rounded-xl shadow-lg mb-12">
 
-        <!-- 3. SECCIÓN A DOS COLUMNAS -->
+        <!-- SECCIÓN A DOS COLUMNAS -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mb-12">
             
-            <!-- Columna Izquierda: Textos, Botón y QR -->
+            <!-- Columna Izquierda: Textos, Botón y QR (Sin el texto de "Conoce más aquí") -->
             <div class="text-center md:text-left flex flex-col justify-center">
                 
                 <p class="text-xl md:text-2xl font-bold text-[#2b4474] leading-relaxed mb-8">
                     AAvance y la Cruz Roja Bogotá se unen para que tu aporte se transforme en ayuda humanitaria directa para las zonas más afectadas por el sismo en Colombia.
                 </p>
                 
-                <!-- Contenedor del Botón y el QR Juntos -->
-                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 mb-8">
-                    
-                    <!-- Botón -->
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
                     <a href="https://links.paymentsway.co/NbwkAY" target="_blank" 
                        class="inline-block bg-[#2b4474] hover:bg-[#1a2b4c] text-yellow-400 font-bold text-xl py-4 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 text-center border-b-4 border-yellow-500 w-full sm:w-auto">
                         Donar ahora
                     </a>
 
-                    <!-- Código QR Pequeño al lado -->
                     <div class="flex flex-col items-center bg-gray-50 p-3 rounded-xl border border-gray-200 shadow-sm">
                         <img src="qr-aavance.jpeg" alt="QR AAVance Pay" class="w-20 h-20 object-contain rounded-md">
                         <span class="text-[10px] font-bold text-[#2b4474] mt-2 uppercase tracking-wide">QR AAvance Pay</span>
                     </div>
-
                 </div>
-
-                <!-- Texto que señala al video -->
-                <p class="text-lg text-gray-500 font-medium">
-                    Conoce más sobre nuestra iniciativa aquí 
-                    <span class="hidden md:inline text-2xl align-middle">👉</span>
-                    <span class="inline md:hidden text-2xl align-middle">👇</span>
-                </p>
 
             </div>
 
-            <!-- Columna Derecha: Mockup de Celular con Video -->
+            <!-- Columna Derecha: Mockup de Celular con Video y tu Nueva Portada -->
             <div class="flex justify-center">
                 <div class="relative border-[12px] border-gray-900 bg-gray-900 rounded-[2.5rem] w-[260px] aspect-[9/16] shadow-2xl overflow-hidden flex items-center justify-center">
                     <div class="absolute top-0 inset-x-0 h-4 bg-gray-900 rounded-b-2xl w-32 mx-auto z-20"></div>
                     
-                    <!-- Tu Video -->
-                    <video controls class="w-full h-full object-cover rounded-[1.5rem] bg-black relative z-10">
+                    <!-- VIDEO CON EL ATRIBUTO POSTER AÑADIDO (Verifica si es .png o .jpg en tu GitHub) -->
+                    <video controls poster="portada-video.png" class="w-full h-full object-cover rounded-[1.5rem] bg-black relative z-10">
                         <source src="video.mp4" type="video/mp4">
                         Tu navegador no soporta video.
                     </video>
@@ -85,12 +89,12 @@
 
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="bg-[#2b4474] text-white py-10 text-center border-t-4 border-yellow-400">
         <div class="max-w-4xl mx-auto px-4">
             <h4 class="text-xl font-bold mb-3">AAvance <span class="text-yellow-400">Solidario</span></h4>
             <p class="text-gray-300 text-xs mb-4 max-w-2xl mx-auto">
-                Todos los fondos recaudados a través de esta landing page son auditados y gestionados en alianza oficial con la Cruz Roja Bogotá.
+                Todos los fondos recaudados son auditados y gestionados a través de la alianza oficial con Cruz Roja Bogotá.
             </p>
             <p class="text-gray-400 text-[10px]">
                 © 2026 AAvance. Todos los derechos reservados.
