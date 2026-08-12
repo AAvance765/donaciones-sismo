@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AAvance y Cruz Roja - Solidaridad por Colombia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans antialiased text-gray-800">
+
+    <!-- Barra superior -->
+    <nav class="bg-white shadow-md py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-black text-[#2b4474] tracking-tighter">
+                AAvance
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="text-sm font-semibold text-gray-500 uppercase hidden md:block">En alianza con</span>
+                <div class="text-red-600 font-bold text-xl flex items-center">
+                    <span class="text-3xl mr-1">+</span> Cruz Roja
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-10 text-center">
+        
+        <!-- 1. IMAGEN PRINCIPAL (Tu diseño original) -->
+        <!-- Nota: En HTML los espacios se reemplazan por %20, por eso la ruta es así -->
+        <img src="Captura%20de%20pantalla%202026-08-10%20182034.png" 
+             alt="Campaña AAvance Solidario" 
+             class="w-full max-w-2xl mx-auto rounded-xl shadow-2xl mb-12 border-4 border-white">
+
+        <h2 class="text-3xl font-bold text-[#2b4474] mb-4">Únete a nuestra colecta oficial</h2>
+        <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+            Tu aporte se transformará en ayuda humanitaria directa para las zonas más afectadas. Conoce más sobre nuestra iniciativa en el siguiente video.
+        </p>
+
+        <!-- 2. VIDEO SUBIDO A GITHUB -->
+        <div class="max-w-2xl mx-auto mb-12 bg-white p-2 rounded-xl shadow-lg border border-gray-200">
+            <!-- Se asume que el video que subirás se llamará video.mp4 -->
+            <video controls class="w-full rounded-lg bg-black">
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+
+        <!-- 3. BOTÓN DE PAGO (Con tu link de PaymentsWay) -->
+        <div class="mb-16">
+            <a href="https://links.paymentsway.co/NbwkAY" target="_blank" 
+               class="inline-block bg-[#2b4474] hover:bg-[#1a2b4c] text-yellow-400 font-bold text-2xl py-5 px-12 rounded-full shadow-xl transition transform hover:scale-105 border-b-4 border-yellow-500">
+                Hacer mi donación ahora
+            </a>
+            <p class="mt-4 text-sm text-gray-500 font-semibold">* Serás redirigido a nuestra pasarela segura.</p>
+        </div>
+
+        <!-- Divisor -->
+        <div class="flex items-center justify-center my-12">
+            <div class="border-t border-gray-300 w-1/4"></div>
+            <span class="px-4 text-gray-500 font-medium">Otras formas de aportar</span>
+            <div class="border-t border-gray-300 w-1/4"></div>
+        </div>
+
+        <!-- 4. TU CÓDIGO QR -->
+        <div class="max-w-sm mx-auto bg-white p-8 rounded-2xl shadow-md border border-gray-100 flex flex-col items-center">
+            <h3 class="font-bold text-xl mb-4 text-[#2b4474]">Escanea y aporta</h3>
+            
+            <!-- Imagen del QR -->
+            <div class="bg-gray-50 p-2 rounded-xl mb-4 border-2 border-dashed border-gray-300">
+                <img src="QR%20AAVance%20Pay.png" alt="QR AAVance Pay" class="w-56 h-56 object-contain rounded-lg">
+            </div>
+            
+            <p class="text-gray-600 text-sm font-medium">Abre tu aplicación bancaria y escanea el código <br><strong class="text-[#2b4474]">QR AAVance Pay</strong></p>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#2b4474] text-white py-12 mt-12 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h4 class="text-2xl font-bold mb-4">AAvance <span class="text-yellow-400">Solidario</span></h4>
+            <p class="text-gray-300 text-sm mb-6">
+                Todos los fondos recaudados a través de esta landing page son auditados y gestionados en alianza oficial con la Cruz Roja para garantizar su entrega a las familias afectadas.
+            </p>
+            <p class="text-gray-400 text-xs">
+                © 2026 AAvance. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
