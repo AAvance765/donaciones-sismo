@@ -51,7 +51,7 @@
         <!-- SECCIÓN A DOS COLUMNAS -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mb-12">
             
-            <!-- Columna Izquierda: Textos, Botón y QR (Sin el texto de "Conoce más aquí") -->
+            <!-- Columna Izquierda: Textos, Botón y QR -->
             <div class="text-center md:text-left flex flex-col justify-center">
                 
                 <p class="text-xl md:text-2xl font-bold text-[#2b4474] leading-relaxed mb-8">
@@ -77,7 +77,7 @@
                 <div class="relative border-[12px] border-gray-900 bg-gray-900 rounded-[2.5rem] w-[260px] aspect-[9/16] shadow-2xl overflow-hidden flex items-center justify-center">
                     <div class="absolute top-0 inset-x-0 h-4 bg-gray-900 rounded-b-2xl w-32 mx-auto z-20"></div>
                     
-                    <!-- VIDEO CON EL ATRIBUTO POSTER AÑADIDO (Verifica si es .png o .jpg en tu GitHub) -->
+                    <!-- VIDEO CON EL ATRIBUTO POSTER AÑADIDO -->
                     <video controls poster="portada-video.png" class="w-full h-full object-cover rounded-[1.5rem] bg-black relative z-10">
                         <source src="video.mp4" type="video/mp4">
                         Tu navegador no soporta video.
@@ -89,13 +89,23 @@
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER ACTUALIZADO -->
     <footer class="bg-[#2b4474] text-white py-10 text-center border-t-4 border-yellow-400">
         <div class="max-w-4xl mx-auto px-4">
-            <h4 class="text-xl font-bold mb-3">AAvance <span class="text-yellow-400">Solidario</span></h4>
-            <p class="text-gray-300 text-xs mb-4 max-w-2xl mx-auto">
-                Todos los fondos recaudados son auditados y gestionados a través de la alianza oficial con Cruz Roja Bogotá.
+            
+            <!-- Logo Blanco AAvance + Texto Solidario -->
+            <div class="flex items-center justify-center space-x-3 mb-5">
+                <img src="logoAAvanceBlanco.png" alt="Logo AAvance Blanco" class="h-6 md:h-8 object-contain">
+                <span class="text-xl md:text-2xl font-bold text-yellow-400">Solidario</span>
+            </div>
+
+            <!-- Texto distribuido en 3 renglones -->
+            <p class="text-gray-300 text-xs md:text-sm mb-6 leading-relaxed">
+                Todos los fondos recaudados son auditados y gestionados<br>
+                a través de la alianza oficial con<br>
+                <span class="font-bold text-white text-sm md:text-base">Cruz Roja Bogotá.</span>
             </p>
+
             <p class="text-gray-400 text-[10px]">
                 © 2026 AAvance. Todos los derechos reservados.
             </p>
