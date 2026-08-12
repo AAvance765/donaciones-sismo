@@ -8,15 +8,18 @@
 </head>
 <body class="bg-gray-50 font-sans antialiased text-gray-800">
 
-    <!-- 1. HEADER BLANCO PARA LOS LOGOS -->
+    <!-- 1. HEADER CENTRADO -->
     <header class="bg-white shadow-sm py-4 px-6 w-full top-0 z-50">
-        <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <div class="max-w-5xl mx-auto flex justify-center items-center space-x-6 md:space-x-12">
             <!-- Logo AAvance -->
             <img src="LogoAAvance.png" alt="Logo AAvance" class="h-8 md:h-10 object-contain">
             
-            <div class="flex items-center space-x-3">
-                <span class="text-xs font-semibold text-gray-400 uppercase tracking-widest hidden md:block">En alianza con</span>
-                <!-- Logo Cruz Roja (Los %20 son los espacios) -->
+            <div class="flex items-center space-x-3 md:space-x-6">
+                <!-- Línea separadora sutil y texto -->
+                <div class="hidden md:flex items-center border-l-2 border-gray-200 pl-6 h-8">
+                    <span class="text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">En alianza con</span>
+                </div>
+                <!-- Logo Cruz Roja -->
                 <img src="Logo%20CRUZ%20ROJA%20horizontal.png" alt="Logo Cruz Roja" class="h-10 md:h-12 object-contain">
             </div>
         </div>
@@ -32,25 +35,40 @@
         <!-- 3. SECCIÓN A DOS COLUMNAS -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mb-12">
             
-            <!-- Columna Izquierda: Texto y Botón -->
+            <!-- Columna Izquierda: Textos, Botón y QR -->
             <div class="text-center md:text-left flex flex-col justify-center">
-                <p class="text-xl md:text-2xl font-bold text-[#2b4474] leading-relaxed mb-6">
+                
+                <p class="text-xl md:text-2xl font-bold text-[#2b4474] leading-relaxed mb-8">
                     AAvance y la Cruz Roja Bogotá se unen para que tu aporte se transforme en ayuda humanitaria directa para las zonas más afectadas por el sismo en Colombia.
                 </p>
                 
-                <p class="text-lg text-gray-500 font-medium mb-8">
+                <!-- Contenedor del Botón y el QR Juntos -->
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6 mb-8">
+                    
+                    <!-- Botón -->
+                    <a href="https://links.paymentsway.co/NbwkAY" target="_blank" 
+                       class="inline-block bg-[#2b4474] hover:bg-[#1a2b4c] text-yellow-400 font-bold text-xl py-4 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 text-center border-b-4 border-yellow-500 w-full sm:w-auto">
+                        Donar ahora
+                    </a>
+
+                    <!-- Código QR Pequeño al lado -->
+                    <div class="flex flex-col items-center bg-gray-50 p-3 rounded-xl border border-gray-200 shadow-sm">
+                        <img src="qr-aavance.jpeg" alt="QR AAVance Pay" class="w-20 h-20 object-contain rounded-md">
+                        <span class="text-[10px] font-bold text-[#2b4474] mt-2 uppercase tracking-wide">QR AAvance Pay</span>
+                    </div>
+
+                </div>
+
+                <!-- Texto que señala al video -->
+                <p class="text-lg text-gray-500 font-medium">
                     Conoce más sobre nuestra iniciativa aquí 
-                    <span class="hidden md:inline">👉</span>
-                    <span class="inline md:hidden">👇</span>
+                    <span class="hidden md:inline text-2xl align-middle">👉</span>
+                    <span class="inline md:hidden text-2xl align-middle">👇</span>
                 </p>
 
-                <a href="https://links.paymentsway.co/NbwkAY" target="_blank" 
-                   class="inline-block bg-[#2b4474] hover:bg-[#1a2b4c] text-yellow-400 font-bold text-xl py-4 px-8 rounded-full shadow-lg transition transform hover:-translate-y-1 text-center border-b-4 border-yellow-500 max-w-xs mx-auto md:mx-0">
-                    Donar ahora
-                </a>
             </div>
 
-            <!-- Columna Derecha: Mockup de Celular -->
+            <!-- Columna Derecha: Mockup de Celular con Video -->
             <div class="flex justify-center">
                 <div class="relative border-[12px] border-gray-900 bg-gray-900 rounded-[2.5rem] w-[260px] aspect-[9/16] shadow-2xl overflow-hidden flex items-center justify-center">
                     <div class="absolute top-0 inset-x-0 h-4 bg-gray-900 rounded-b-2xl w-32 mx-auto z-20"></div>
@@ -65,28 +83,10 @@
 
         </div>
 
-        <!-- 4. SECCIÓN DEL QR -->
-        <div class="flex items-center justify-center my-8">
-            <div class="border-t border-gray-300 w-1/5"></div>
-            <span class="px-4 text-gray-400 font-medium text-sm uppercase tracking-wider">O escanea y aporta</span>
-            <div class="border-t border-gray-300 w-1/5"></div>
-        </div>
-
-        <div class="max-w-sm mx-auto bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center">
-            <!-- QR AAvance actualizado a .jpeg -->
-            <div class="bg-gray-50 p-2 rounded-xl mb-4 border-2 border-dashed border-gray-200">
-                <img src="qr-aavance.jpeg" alt="QR AAVance Pay" class="w-48 h-48 object-contain rounded-lg">
-            </div>
-            <p class="text-gray-500 text-sm font-medium text-center">
-                Abre tu aplicación bancaria y escanea el código <br>
-                <strong class="text-[#2b4474]">QR AAVance Pay</strong>
-            </p>
-        </div>
-
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#2b4474] text-white py-10 mt-12 text-center border-t-4 border-yellow-400">
+    <footer class="bg-[#2b4474] text-white py-10 text-center border-t-4 border-yellow-400">
         <div class="max-w-4xl mx-auto px-4">
             <h4 class="text-xl font-bold mb-3">AAvance <span class="text-yellow-400">Solidario</span></h4>
             <p class="text-gray-300 text-xs mb-4 max-w-2xl mx-auto">
