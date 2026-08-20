@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-slate-50">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AAvance Donaciones - Tablero de Gestión</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body class="h-full text-slate-800 flex flex-col">
+
+  <!-- 1. TOP NAV BAR CON LOGOS -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- LOGO AAVANCE PAY -->
+      <div class="flex items-center space-x-3">
+        <!-- Reemplaza el enlace de abajo por la ruta real de tu logo en GitHub -->
+        <img src="https://donaciones.aavancepay.com/ruta-de-tu-logo-aavance.png" alt="AAvance Pay" class="h-8 object-contain">
+        
+        <span class="text-xs font-semibold px-2.5 py-0.5 rounded bg-cyan-50 text-cyan-700 border border-cyan-200">
+          DONACIONES
+        </span>
+      </div>
+      
+      <!-- LOGO CRUZ ROJA -->
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-3 border-r border-slate-200 pr-4">
+          <!-- Reemplaza el enlace de abajo por la ruta real del logo de la Cruz Roja -->
+          <img src="https://donaciones.aavancepay.com/ruta-logo-cruz-roja.png" alt="Cruz Roja Bogotá" class="h-8 object-contain">
+          
+          <div class="text-xs hidden sm:block">
+            <p class="font-semibold text-slate-900">Cruz Roja Bogotá</p>
+            <p class="text-slate-500">Administrador de Tesorería</p>
+          </div>
+        </div>
+        <button class="text-slate-500 hover:text-slate-700 p-1.5 rounded-lg border border-slate-200 text-xs flex items-center gap-1.5">
+          <i data-lucide="log-out" class="w-4 h-4"></i> <span class="hidden sm:inline">Salir</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- BREADCRUMB & CONTEXT HEADER -->
+  <div class="bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between text-xs text-slate-500">
+      <div class="flex items-center space-x-2">
+        <span>Panel General</span>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+        <span>Cruz Roja Seccional Cundinamarca/Bogotá</span>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+        <span class="font-medium text-slate-900">Módulo Operativo de Recaudo</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200 hidden sm:inline-flex">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5"></span> Pasarela Operativa (Agregador)
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
+
+    <!-- TOP CONTROL BAR / ACTIONS -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <h1 class="text-xl font-bold text-slate-900">Gestión Integrada de Recaudos y Campañas</h1>
+        <p class="text-xs text-slate-500 mt-0.5">Control transaccional en tiempo real y emisión de certificados tributarios.</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 px-3 py-2 rounded-lg text-xs font-medium shadow-sm flex items-center gap-2">
+          <i data-lucide="download" class="w-4 h-4"></i> <span class="hidden sm:inline">Reporte de Tesorería</span>
+        </button>
+        <button class="bg-slate-900 hover:bg-slate-800 text-white px-3 py-2 rounded-lg text-xs font-medium shadow-sm flex items-center gap-2">
+          <i data-lucide="plus" class="w-4 h-4"></i> Nueva Campaña
+        </button>
+      </div>
+    </div>
+
+    <!-- KPI CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <!-- Card 1 -->
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div>
+          <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Total Recaudado</p>
+          <p class="text-2xl font-bold text-slate-900 mt-1">$ 148.350.000</p>
+          <span class="text-[10px] text-emerald-600 font-medium flex items-center mt-1">
+            <i data-lucide="trending-up" class="w-3 h-3 mr-1"></i> +12.4% vs mes anterior
+          </span>
+        </div>
+        <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+          <i data-lucide="dollar-sign" class="w-5 h-5"></i>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div>
+          <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Campañas Activas</p>
+          <p class="text-2xl font-bold text-slate-900 mt-1">4</p>
+          <span class="text-[10px] text-slate-500 mt-1 block">100% con links parametrizados</span>
+        </div>
+        <div class="w-10 h-10 rounded-lg bg-cyan-50 text-cyan-600 flex items-center justify-center">
+          <i data-lucide="target" class="w-5 h-5"></i>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div>
+          <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Donantes Registrados</p>
+          <p class="text-2xl font-bold text-slate-900 mt-1">1,240</p>
+          <span class="text-[10px] text-slate-500 mt-1 block">PSE, Tarjetas, BRE-B</span>
+        </div>
+        <div class="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+          <i data-lucide="users" class="w-5 h-5"></i>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between">
+        <div>
+          <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Certificados Emitidos</p>
+          <p class="text-2xl font-bold text-slate-900 mt-1">892</p>
+          <span class="text-[10px] text-emerald-600 font-medium mt-1 block">Autogestión activa</span>
+        </div>
+        <div class="w-10 h-10 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+          <i data-lucide="file-check" class="w-5 h-5"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESORERÍA / DISPERSIÓN NOTICE -->
+    <div class="bg-slate-900 text-white rounded-xl p-4 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="p-2 bg-slate-800 rounded-lg border border-slate-700 text-cyan-400">
+          <i data-lucide="building-2" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <p class="text-xs text-slate-400">Estado de Liquidación de Fondos (Modelo Agregador)</p>
+          <p class="text-sm font-semibold">Próxima dispersión a cuenta institucional: <span class="text-cyan-400">Viernes ($ 18.420.000 COP)</span></p>
+        </div>
+      </div>
+      <div class="text-xs text-slate-400 border-t md:border-t-0 md:border-l border-slate-800 pt-2 md:pt-0 md:pl-4">
+        <span>Costo de dispersión: <strong>$0 COP</strong></span> | <span>Sincronización bancaria en tiempo real</span>
+      </div>
+    </div>
+
+    <!-- NAVIGATION TABS -->
+    <div class="border-b border-slate-200 overflow-x-auto">
+      <nav class="-mb-px flex space-x-6 text-xs font-medium min-w-max">
+        <a href="#" class="border-b-2 border-cyan-500 text-cyan-600 pb-3 flex items-center gap-2">
+          <i data-lucide="layers" class="w-4 h-4"></i> Campañas de Recaudo
+        </a>
+        <a href="#" class="border-b-2 border-transparent text-slate-500 hover:text-slate-700 pb-3 flex items-center gap-2">
+          <i data-lucide="list" class="w-4 h-4"></i> Directorio de Donantes
+        </a>
+        <a href="#" class="border-b-2 border-transparent text-slate-500 hover:text-slate-700 pb-3 flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4"></i> Certificados tributarios
+        </a>
+      </nav>
+    </div>
+
+    <!-- PARALLEL VIEW SECTION -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+
+      <!-- LEFT 2 COLUMNS: CAMPAIGNS -->
+      <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center justify-between">
+          <h2 class="text-sm font-semibold text-slate-900">Campañas Activas & Links Parametrizados</h2>
+          <span class="text-xs text-slate-500">Mostrando 2 de 4</span>
+        </div>
+
+        <!-- Campaign Card 1 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-slate-300 transition-all">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 mb-2">
+                Emergencia Humanitaria
+              </span>
+              <h3 class="font-bold text-slate-900 text-base">Ola Invernal - Cundinamarca 2026</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Asistencia de primera respuesta e insumos médicos.</p>
+            </div>
+            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Activa</span>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="mt-4">
+            <div class="flex justify-between text-xs font-medium mb-1">
+              <span class="text-slate-600">Recaudado: $ 85.000.000 COP</span>
+              <span class="text-slate-900 font-bold">85% de $ 100M</span>
+            </div>
+            <div class="w-full bg-slate-100 rounded-full h-2">
+              <div class="bg-cyan-500 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <!-- Quick Action / Link Copy -->
+          <div class="mt-4 pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="w-full sm:w-auto flex items-center bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-600 truncate">
+              <i data-lucide="link" class="w-3.5 h-3.5 mr-2 text-slate-400"></i>
+              <span class="truncate">https://donar.cruzrojabogota.org.co/pay/ola-invernal</span>
+            </div>
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+              <button class="w-full sm:w-auto text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition-colors flex items-center justify-center gap-1">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copiar Link
+              </button>
+              <button class="w-full sm:w-auto text-xs font-medium text-white bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded-lg transition-colors flex items-center justify-center gap-1">
+                <i data-lucide="qr-code" class="w-3.5 h-3.5"></i> Ver QR
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Campaign Card 2 -->
+        <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm hover:border-slate-300 transition-all">
+          <div class="flex items-start justify-between">
+            <div>
+              <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-amber-50 text-amber-700 mb-2">
+                Salud & Nutrición
+              </span>
+              <h3 class="font-bold text-slate-900 text-base">Comedores Comunitarios Sur de Bogotá</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Sostenimiento nutricional de la infancia vulnerable.</p>
+            </div>
+            <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">Activa</span>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="mt-4">
+            <div class="flex justify-between text-xs font-medium mb-1">
+              <span class="text-slate-600">Recaudado: $ 42.350.000 COP</span>
+              <span class="text-slate-900 font-bold">53% de $ 80M</span>
+            </div>
+            <div class="w-full bg-slate-100 rounded-full h-2">
+              <div class="bg-blue-600 h-2 rounded-full" style="width: 53%"></div>
+            </div>
+          </div>
+
+          <!-- Quick Action / Link Copy -->
+          <div class="mt-4 pt-3 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="w-full sm:w-auto flex items-center bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200 text-xs text-slate-600 truncate">
+              <i data-lucide="link" class="w-3.5 h-3.5 mr-2 text-slate-400"></i>
+              <span class="truncate">https://donar.cruzrojabogota.org.co/pay/comedores-sur</span>
+            </div>
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+              <button class="w-full sm:w-auto text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg transition-colors flex items-center justify-center gap-1">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Copiar Link
+              </button>
+              <button class="w-full sm:w-auto text-xs font-medium text-white bg-slate-900 hover:bg-slate-800 px-3 py-1.5 rounded-lg transition-colors flex items-center justify-center gap-1">
+                <i data-lucide="qr-code" class="w-3.5 h-3.5"></i> Ver QR
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT 1 COLUMN: LIVE RECENT DONATIONS LIST -->
+      <div class="bg-white rounded-xl border border-slate-200 p-4 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+          <h2 class="text-sm font-semibold text-slate-900 flex items-center gap-2">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            Últimas Donaciones
+          </h2>
+          <span class="text-[10px] text-slate-400">En tiempo real</span>
+        </div>
+
+        <div class="space-y-3">
+          <!-- Item 1 -->
+          <div class="flex items-center justify-between p-2 hover:bg-slate-50 rounded-lg transition-colors text-xs border border-slate-100">
+            <div>
+              <p class="font-bold text-slate-900">Carlos Mendoza</p>
+              <p class="text-[10px] text-slate-500">Canal: PSE | Ola Invernal</p>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-emerald-600">$ 250.000 COP</p>
+              <span class="text-[9px] text-slate-400">Hace 4 min</span>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="flex items-center justify-between p-2 hover:bg-slate-50 rounded-lg transition-colors text-xs border border-slate-100">
+            <div>
+              <p class="font-bold text-slate-900">Empresa Grupo Alfa S.A.</p>
+              <p class="text-[10px] text-slate-500">Canal: Tarjeta Visa | Comedores</p>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-emerald-600">$ 5.000.000 COP</p>
+              <span class="text-[9px] text-slate-400">Hace 18 min</span>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="flex items-center justify-between p-2 hover:bg-slate-50 rounded-lg transition-colors text-xs border border-slate-100">
+            <div>
+              <p class="font-bold text-slate-900">María Fernanda Gómez</p>
+              <p class="text-[10px] text-slate-500">Canal: BRE-B | Ola Invernal</p>
+            </div>
+            <div class="text-right">
+              <p class="font-bold text-emerald-600">$ 50.000 COP</p>
+              <span class="text-[9px] text-slate-400">Hace 32 min</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="w-full text-center text-xs font-semibold text-cyan-600 hover:text-cyan-700 py-2 border border-cyan-100 bg-cyan-50/50 rounded-lg">
+          Ver Auditoría Transaccional →
+        </button>
+      </div>
+
+    </div>
+
+    <!-- DATA TABLE: DETALLE -->
+    <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden overflow-x-auto mt-6">
+      <div class="p-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-sm font-bold text-slate-900">Directorio de Donantes & Trazabilidad</h3>
+          <p class="text-xs text-slate-500">Consulta de historial por aportante y estado de emisión fiscal.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <input type="text" placeholder="Buscar donante o NIT/Cédula..." class="bg-slate-50 border border-slate-200 text-xs rounded-lg px-3 py-1.5 focus:outline-none focus:border-cyan-500 w-full sm:w-64">
+        </div>
+      </div>
+
+      <table class="w-full text-left border-collapse text-xs min-w-max">
+        <thead>
+          <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 font-medium">
+            <th class="py-3 px-4">Donante / Identificación</th>
+            <th class="py-3 px-4">Campaña Destino</th>
+            <th class="py-3 px-4">Medio de Pago</th>
+            <th class="py-3 px-4">Monto Aportado</th>
+            <th class="py-3 px-4">Certificado Tributario</th>
+            <th class="py-3 px-4 text-right">Acción</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 text-slate-700">
+          <tr class="hover:bg-slate-50/80 transition-colors">
+            <td class="py-3 px-4">
+              <p class="font-semibold text-slate-900">Carlos Mendoza</p>
+              <p class="text-[10px] text-slate-400">CC: 1.018.452.900</p>
+            </td>
+            <td class="py-3 px-4">Ola Invernal 2026</td>
+            <td class="py-3 px-4">
+              <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-100 font-medium text-[10px]">PSE</span>
+            </td>
+            <td class="py-3 px-4 font-semibold text-slate-900">$ 250.000 COP</td>
+            <td class="py-3 px-4">
+              <span class="inline-flex items-center text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[10px] font-medium border border-emerald-200">
+                <i data-lucide="check" class="w-3 h-3 mr-1"></i> Emitido
+              </span>
+            </td>
+            <td class="py-3 px-4 text-right">
+              <button class="text-cyan-600 hover:text-cyan-800 font-medium text-[11px]">Reenviar PDF</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-slate-50/80 transition-colors">
+            <td class="py-3 px-4">
+              <p class="font-semibold text-slate-900">Grupo Alfa S.A.</p>
+              <p class="text-[10px] text-slate-400">NIT: 900.342.119-1</p>
+            </td>
+            <td class="py-3 px-4">Comedores Comunitarios</td>
+            <td class="py-3 px-4">
+              <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 border border-slate-200 font-medium text-[10px]">Visa</span>
+            </td>
+            <td class="py-3 px-4 font-semibold text-slate-900">$ 5.000.000 COP</td>
+            <td class="py-3 px-4">
+              <span class="inline-flex items-center text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded text-[10px] font-medium border border-emerald-200">
+                <i data-lucide="check" class="w-3 h-3 mr-1"></i> Emitido
+              </span>
+            </td>
+            <td class="py-3 px-4 text-right">
+              <button class="text-cyan-600 hover:text-cyan-800 font-medium text-[11px]">Descargar</button>
+            </td>
+          </tr>
+          <tr class="hover:bg-slate-50/80 transition-colors">
+            <td class="py-3 px-4">
+              <p class="font-semibold text-slate-900">María Fernanda Gómez</p>
+              <p class="text-[10px] text-slate-400">CC: 52.890.123</p>
+            </td>
+            <td class="py-3 px-4">Ola Invernal 2026</td>
+            <td class="py-3 px-4">
+              <span class="px-2 py-0.5 rounded bg-purple-50 text-purple-700 border border-purple-100 font-medium text-[10px]">BRE-B</span>
+            </td>
+            <td class="py-3 px-4 font-semibold text-slate-900">$ 50.000 COP</td>
+            <td class="py-3 px-4">
+              <span class="inline-flex items-center text-amber-700 bg-amber-50 px-2 py-0.5 rounded text-[10px] font-medium border border-amber-200">
+                <i data-lucide="clock" class="w-3 h-3 mr-1"></i> Solicitado
+              </span>
+            </td>
+            <td class="py-3 px-4 text-right">
+              <button class="text-cyan-600 hover:text-cyan-800 font-medium text-[11px]">Generar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
